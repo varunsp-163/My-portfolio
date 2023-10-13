@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Car-Rental",
+    "image": "https://imgur.com/XKRnUrB.png",
+    "description": "A platform for travelers who can book cars for their needs",
+    "tags": ["React", "Tailwind css", "Mongodb", "Golang"],
+    "source_code": "https://github.com/varunsp-163/CAR-RENTAL",
+    "demo": "https://www.youtube.com/watch?v=G7Ydz7f2SQw"
+  },
+  {
+    "id": 2,
+    "name": "Promptopia",
+    "image": "https://imgur.com/fEmgn6z.png",
+    "description": "A platform for coders to store their prompts and share with others",
+    "tags": ["Next", "Mongodb", "Tailwind css", "OAuth"],
+    "source_code": "https://github.com/varunsp-163/prompts",
+    "demo": "https://project-promptopia-j8qw3pxrb-varunsp-163.vercel.app/"
+  },
+  {
+    "id": 3,
+    "name": "IK-APP",
+    "image": "https://imgur.com/PAvYxLu.png",
+    "description": "Made a demo landing page for IK developers",
+    "tags": ["Next","Firebase","Tailwind css","Responsive design"],
+    "source_code": "https://github.com/varunsp-163/IK-app",
+    "demo": "https://ik-app.vercel.app/"
+  },
+  {
+    "id": 4,
+    "name": "Amz-React",
+    "image": "https://imgur.com/HXEigf5.png",
+    "description": "A simple react project, where I integrated basic sorting functionality",
+    "tags": ["React", "Tailwind css", "Mongodb"],
+    "source_code": "https://github.com/varunsp-163/Amz-react",
+    "demo": "https://amz-react-eight.vercel.app/"
+  },
+  {
+    "id": 5,
+    "name": "Shop-React",
+    "image": "https://imgur.com/yRvAMUi.png",
+    "description": "A food ordering platform for healthy and home-cooked meals",
+    "tags": ["React", "Firebase", "Git-pages"],
+    "source_code": "https://github.com/varunsp-163/Shop-react",
+    "demo": "https://varunsp-163.github.io/Shop-react/"
+  },
+  {
+    "id": 6,
+    "name": "Sci Astra",
+    "image": "https://imgur.com/dn5SRDG.png",
+    "description": "A team page made for sciastra",
+    "tags": ["React", "Responsive design", "Swiper.js"],
+    "source_code": "https://github.com/varunsp-163/SciAstra",
+    "demo": "https://sci-astra-wheat.vercel.app/"
+  },
+  {
+    "id": 7,
+    "name": "Rent a car",
+    "image": "https://imgur.com/aEwgaXD.png",
+    "description": "A simple web app where I exercised some pagination, redux and many other concepts",
+    "tags": ["React", "Redux", "Pagination"],
+    "source_code": "https://github.com/varunsp-163/Rent-a-Car",
+    "demo": "https://rent-a-car-cyan.vercel.app/"
+  }
+]
