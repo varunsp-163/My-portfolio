@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <section className="p-4 text-center">
+    <div className=" w-auto h-auto text-center">
       <h1 className="text-3xl font-bold mb-4">A Little Bit About Me</h1>
       <p className="text-lg">
         Hello, I'm Varun S P. I'm a Front-end web developer and Tech Enthusiast
@@ -53,7 +53,8 @@ const AboutPage = () => {
       <h2 className="text-2xl mt-6 mb-2">
         I'm open for freelancing and internships/contracts/jobs
       </h2>
-    </section>
+    </div>
+
   );
 };
 
