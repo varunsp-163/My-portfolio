@@ -4,7 +4,7 @@ const contactItems = [
   {
     social: 'website',
     link: 'varunsp.me',
-    href: 'https://varunsp.me',
+    href: 'https://varunsp.vercel.app/about',
   },
   {
     social: 'email',
