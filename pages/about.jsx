@@ -6,7 +6,7 @@ const AboutPage = () => {
       <div className="text-center w-full">
         <h1 className="text-3xl font-bold mb-4">A Little Bit About Me</h1>
         <p className="text-lg">
-          Hello, I'm Varun S P. I'm a Front-end web developer and Tech
+          Hello, I'm Varun S P. I'm a Front-end web developer/AWS cloud developer and Tech
           Enthusiast from Bangalore, Karnataka.
         </p>
 

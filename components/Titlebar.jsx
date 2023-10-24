@@ -1,5 +1,6 @@
-import Image from 'next/image';
-import styles from '../styles/Titlebar.module.css';
+import React from "react";
+import Image from "next/image";
+import styles from "../styles/Titlebar.module.css";
 
 const Titlebar = () => {
   return (
@@ -17,7 +18,11 @@ const Titlebar = () => {
         <p>Selection</p>
         <p>View</p>
         <p>Go</p>
-        <p><a href="/" style={{textDecoration:'none',color:'white'}}>Run</a></p>
+        <p>
+          <a href="/" style={{ textDecoration: "none", color: "white" }}>
+            Run
+          </a>
+        </p>
         <p>Terminal</p>
         <p>Help</p>
       </div>
