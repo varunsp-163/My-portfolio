@@ -13,7 +13,6 @@ const Bottombar = () => {
       <div className={styles.container}>
         <a
           href="https://varunsp.vercel.app"
-          target="_blank"
           rel="noreferrer noopener"
           className={styles.section}
         >
