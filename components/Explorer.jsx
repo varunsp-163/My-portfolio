@@ -128,7 +128,7 @@ const Explorer = () => {
           >
             {projects.map((item) => (
               <Link href={item.demo} key={item.name} passHref>
-                <a className={styles.link} target="_blank" rel="noopener noreferrer">
+                <h1 className={styles.link} target="_blank" rel="noopener noreferrer">
                   <div className={styles.filen}>
                     <Image
                       src={`/${item.icon}`}
@@ -138,7 +138,7 @@ const Explorer = () => {
                     />{" "}
                     <p>{item.name}</p>
                   </div>
-                </a>
+                </h1>
               </Link>
             ))}
           </div>

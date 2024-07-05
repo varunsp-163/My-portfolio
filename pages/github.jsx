@@ -11,6 +11,7 @@ const GithubPage = ({ repos, user }) => {
     level3: "#26a641",
     level4: "#39d353",
   };
+  console.log(repos);
 
   return (
     <>
@@ -48,6 +49,7 @@ const GithubPage = ({ repos, user }) => {
     </>
   );
 };
+
 export async function getStaticProps() {
   try {
     const userRes = await fetch(
@@ -92,10 +94,12 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error("Error fetching GitHub data:", error.message);
+
     return {
       props: { title: "GitHub", repos: [], user: {} }, // Return empty repos and user in case of error
       revalidate: 10,
     };
   }
 }
+
 export default GithubPage;
