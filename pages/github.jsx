@@ -11,6 +11,7 @@ const GithubPage = ({ repos, user }) => {
     level3: "#26a641",
     level4: "#39d353",
   };
+  console.log(repos);
 
   return (
     <>
@@ -50,33 +51,55 @@ const GithubPage = ({ repos, user }) => {
 };
 
 export async function getStaticProps() {
-  const userRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
-    {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
-      },
-    }
-  );
-  const user = await userRes.json();
+  try {
+    const userRes = await fetch(
+      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
+      {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
+      }
+    );
+    const user = await userRes.json();
 
-  const repoRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
-    {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
-      },
-    }
-  );
-  let repos = await repoRes.json();
-  repos = repos
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 6);
+    const repoRes = await fetch(
+      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
+      {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
+      }
+    );
 
-  return {
-    props: { title: "GitHub", repos, user },
-    revalidate: 10,
-  };
+    if (!repoRes.ok) {
+      throw new Error(
+        `GitHub API error: ${repoRes.status} ${repoRes.statusText}`
+      );
+    }
+
+    let repos = await repoRes.json();
+
+    if (!Array.isArray(repos)) {
+      throw new Error("GitHub API did not return an array of repositories");
+    }
+
+    // Sort repositories by stargazers_count and limit to 6
+    repos = repos
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .slice(0, 6);
+
+    return {
+      props: { title: "GitHub", repos, user },
+      revalidate: 10,
+    };
+  } catch (error) {
+    console.error("Error fetching GitHub data:", error.message);
+
+    return {
+      props: { title: "GitHub", repos: [], user: {} }, // Return empty repos and user in case of error
+      revalidate: 10,
+    };
+  }
 }
 
 export default GithubPage;
