@@ -70,7 +70,7 @@ const Sidebar = () => {
       </div>
       <div className={styles.sidebarBottom}>
         {sidebarBottomItems.map(({ Icon, path }) => (
-          <div className={styles.iconContainer}>
+          <div key={Icon} className={styles.iconContainer}>
             <Link href={path} key={path}>
               <Icon
                 fill={
