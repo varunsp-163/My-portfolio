@@ -11,7 +11,6 @@ const GithubPage = ({ repos, user }) => {
     level3: "#26a641",
     level4: "#39d353",
   };
-  console.log(repos);
 
   return (
     <>

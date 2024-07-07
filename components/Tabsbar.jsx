@@ -1,5 +1,6 @@
 import Tab from "./Tab";
 import styles from "../styles/Tabsbar.module.css";
+import leetcode from "./icons/leetcode.svg"
 
 const Tabsbar = () => {
   return (
@@ -8,8 +9,8 @@ const Tabsbar = () => {
       <Tab icon="/html_icon.svg" filename="about.html" path="/about" />
       <Tab icon="/css_icon.svg" filename="contact.css" path="/contact" />
       <Tab icon="/js_icon.svg" filename="projects.js" path="/projects" />
-
       <Tab icon="/markdown_icon.svg" filename="github.md" path="/github" />
+      <Tab icon={leetcode} filename="Leetcode.txt" path="/leetcode" />
     </div>
   );
 };
