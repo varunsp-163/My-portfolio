@@ -27,7 +27,6 @@ export default function HomePage() {
             </Link>
             
           </div>
-          <Illustration className={styles.illustration} />
         </div>
       </div>
     </>
