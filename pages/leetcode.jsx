@@ -177,4 +177,10 @@ const Leetcode = () => {
   );
 };
 
+export async function getStaticProps() {
+  return {
+    props: { title: "Leetcode" },
+  };
+}
+
 export default Leetcode;
