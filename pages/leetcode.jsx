@@ -1,5 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const Leetcode = () => {
   const [userDetails, setUserDetails] = useState({
@@ -18,122 +39,124 @@ const Leetcode = () => {
     contestParticipation: [],
   });
 
-  const getProfileDetails = async () => {
-    try {
-      const res = await axios.get(
-        "https://alfa-leetcode-api.onrender.com/spvarun47/"
-      );
-      setUserDetails(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getBadges = async () => {
-    try {
-      const res = await axios.get(
-        "https://alfa-leetcode-api.onrender.com/spvarun47/badges"
-      );
-      setBadges(res.data.badges);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getContestDetails = async () => {
-    try {
-      const res = await axios.get(
-        "https://alfa-leetcode-api.onrender.com/spvarun47/contest"
-      );
-      setContestDetails(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
-    getProfileDetails();
-    getBadges();
-    getContestDetails();
+    const fetchData = async () => {
+      try {
+        const [profileRes, badgesRes, contestRes] = await Promise.all([
+          axios.get("https://alfa-leetcode-api.onrender.com/spvarun47/"),
+          axios.get("https://alfa-leetcode-api.onrender.com/spvarun47/badges"),
+          axios.get("https://alfa-leetcode-api.onrender.com/spvarun47/contest"),
+        ]);
+        setUserDetails(profileRes.data);
+        setBadges(badgesRes.data.badges);
+        setContestDetails(contestRes.data);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="text-white p-8 rounded-lg shadow-lg w-auto text-center">
-        {userDetails.avatar && (
-          <img
-            src={userDetails.avatar}
-            alt="User Avatar"
-            width={100}
-            height={100}
-            className="rounded-full mx-auto shadow-md"
-          />
-        )}
+  const contestTitles = contestDetails.contestParticipation.map(
+    (contest) => contest.contest.title
+  );
+  const contestRankings = contestDetails.contestParticipation.map(
+    (contest) => contest.ranking
+  );
 
-        {userDetails.name && (
-          <h2 className="text-2xl font-bold  mt-4">{userDetails.name}</h2>
-        )}
-        {userDetails.birthday && (
-          <p className=" mt-2">Birthday: {userDetails.birthday}</p>
-        )}
-        {userDetails.ranking !== null && (
-          <p className=" mt-2">Ranking: {userDetails.ranking}</p>
+  const chartData = {
+    labels: contestTitles,
+    datasets: [
+      {
+        label: "Contest Rankings",
+        data: contestRankings,
+        borderColor: "rgba(75,192,192,1)",
+        backgroundColor: "rgba(75,192,192,0.2)",
+        fill: true,
+        tension: 0.1,
+      },
+    ],
+  };
+
+  return (
+    <div className="flex flex-col items-center p-4">
+      <div className="w-full max-w-2xl">
+        <div className="bg-white p-6 rounded-lg shadow-lg mb-6 flex items-center">
+          {userDetails.avatar && (
+            <img
+              src={userDetails.avatar}
+              alt="User Avatar"
+              className="w-24 h-24 rounded-full mx-auto md:mx-0 shadow-md"
+            />
+          )}
+          <div className="md:ml-6 text-center md:text-left">
+            {userDetails.name && (
+              <h2 className="text-2xl font-bold text-gray-800">
+                {userDetails.name}
+              </h2>
+            )}
+            {userDetails.birthday && (
+              <p className="text-gray-600">Birthday: {userDetails.birthday}</p>
+            )}
+            {userDetails.ranking !== null && (
+              <p className="text-gray-600">Ranking: {userDetails.ranking}</p>
+            )}
+          </div>
+        </div>
+
+        {contestDetails.contestParticipation.length > 0 && (
+          <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h3 className="text-xl font-semibold text-gray-800">
+              Contest Rankings Graph
+            </h3>
+            <Line data={chartData} />
+          </div>
         )}
 
         {badges.length > 0 && (
-          <div className="mt-4">
-            <h3 className="text-xl font-semibold ">Badges</h3>
-            <div className="flex justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h3 className="text-xl font-semibold text-gray-800">Badges</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
               {badges.map((badge) => (
-                <div key={badge.id} className="flex flex-col items-center m-2">
+                <div key={badge.id} className="flex flex-col items-center">
                   <img
-                    src={badge.icon}
+                    src={
+                      badge.id === 4183371
+                        ? "https://leetcode.com/static/images/badges/dcc-2024-6.png"
+                        : badge.icon
+                    }
                     alt={badge.displayName}
                     className="w-16 h-16"
                   />
-                  <p className=" mt-2 text-sm">{badge.displayName}</p>
+                  <p className="text-gray-600 mt-2 text-sm">
+                    {badge.displayName}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold ">Contest Details</h3>
-          <p className=" mt-2">Attended: {contestDetails.contestAttend}</p>
-          <p className=" mt-2">
+        <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
+          <h3 className="text-xl font-semibold text-gray-800">
+            Contest Details
+          </h3>
+          <p className="text-gray-600 mt-2">
+            Attended: {contestDetails.contestAttend}
+          </p>
+          <p className="text-gray-600 mt-2">
             Rating: {contestDetails.contestRating.toFixed(2)}
           </p>
-          <p className=" mt-2">
+          <p className="text-gray-600 mt-2">
             Global Ranking: {contestDetails.contestGlobalRanking}
           </p>
-          <p className=" mt-2">
+          <p className="text-gray-600 mt-2">
             Total Participants: {contestDetails.totalParticipants}
           </p>
-          <p className=" mt-2">
+          <p className="text-gray-600 mt-2">
             Top Percentage: {contestDetails.contestTopPercentage.toFixed(2)}%
           </p>
-
-          {contestDetails.contestParticipation.length > 0 && (
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold ">Participation</h3>
-              {contestDetails.contestParticipation.map((contest, index) => (
-                <div key={index} className="mt-2 p-2 flex gap-2 border-t">
-                  <p className="">Contest: {contest.contest.title}</p>
-                  <p className="">Rating: {contest.rating}</p>
-                  <p className="">Ranking: {contest.ranking}</p>
-                  <p className="">
-                    Problems Solved: {contest.problemsSolved}/
-                    {contest.totalProblems}
-                  </p>
-                  <p className="">
-                    Finish Time: {Math.floor(contest.finishTimeInSeconds / 60)}{" "}
-                    mins
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </div>
