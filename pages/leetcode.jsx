@@ -54,12 +54,11 @@ const Leetcode = () => {
         setUserDetails(profileRes.data);
         setBadges(badgesRes.data.badges);
         setContestDetails(contestRes.data);
-      } catch (err) {
-        console.error("Error fetching data:", err);
-      } finally {
         setLoadingProfile(false);
         setLoadingBadges(false);
         setLoadingContest(false);
+      } catch (err) {
+        console.error("Error fetching data:", err);
       }
     };
 
@@ -79,8 +78,8 @@ const Leetcode = () => {
       {
         label: "Contest Rankings",
         data: contestRankings,
-        borderColor: "rgba(255,165,0,1)", // Changed to orange
-        backgroundColor: "rgba(255,165,0,0.2)", // Changed to orange
+        borderColor: "rgba(75,192,192,1)",
+        backgroundColor: "rgba(75,192,192,0.2)",
         fill: true,
         tension: 0.1,
       },
@@ -88,28 +87,28 @@ const Leetcode = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full space-y-6">
-      <div className="bg-white  rounded-lg shadow-lg flex items-center space-x-6">
+    <div className="flex text-white flex-col items-center w-full">
+      <div className=" rounded-lg  mb-6 flex items-center">
         {loadingProfile ? (
           <FadeLoader color={"#36D7B7"} loading={loadingProfile} />
         ) : (
           <img
             src={userDetails.avatar}
             alt="User Avatar"
-            className="w-24 h-24 rounded-full shadow-md"
+            className="w-24 h-24 rounded-full mx-auto md:mx-0 shadow-md"
           />
         )}
-        <div className="text-center md:text-left">
+        <div className="md:ml-6 text-center md:text-left">
           {userDetails.name && (
-            <h2 className="text-2xl font-bold text-gray-800">
+            <h2 className="text-2xl font-bold text-white">
               {userDetails.name}
             </h2>
           )}
           {userDetails.birthday && (
-            <p className="text-gray-600">Birthday: {userDetails.birthday}</p>
+            <p className="text-gray-300">Birthday: {userDetails.birthday}</p>
           )}
           {userDetails.ranking !== null && (
-            <p className="text-gray-600">Ranking: {userDetails.ranking}</p>
+            <p className="text-gray-300">Ranking: {userDetails.ranking}</p>
           )}
         </div>
       </div>
@@ -118,53 +117,60 @@ const Leetcode = () => {
         <FadeLoader color={"#36D7B7"} loading={loadingContest} />
       ) : (
         contestDetails.contestParticipation.length > 0 && (
-          <div className="bg-white  rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-800">
+          <div className="  rounded-lg mb-6">
+            <h3 className="text-xl font-semibold text-white">
               Contest Rankings Graph
             </h3>
             <Line data={chartData} />
           </div>
         )
       )}
-
-      <div className="bg-white  rounded-lg shadow-lg">
-        <h3 className="text-xl font-semibold text-gray-800">Contest Details</h3>
-        <p className="text-gray-600 mt-2">
-          Attended: {contestDetails.contestAttend}
-        </p>
-        <p className="text-gray-600 mt-2">
-          Rating: {contestDetails.contestRating.toFixed(2)}
-        </p>
-        <p className="text-gray-600 mt-2">
-          Global Ranking: {contestDetails.contestGlobalRanking}
-        </p>
-        <p className="text-gray-600 mt-2">
-          Total Participants: {contestDetails.totalParticipants}
-        </p>
-        <p className="text-gray-600 mt-2">
-          Top Percentage: {contestDetails.contestTopPercentage.toFixed(2)}%
-        </p>
-      </div>
+      {!loadingContest && (
+        <div className="  rounded-lg mb-6">
+          <h3 className="text-xl font-semibold text-white">Contest Details</h3>
+          <p className="text-gray-300 mt-2">
+            Attended: {contestDetails.contestAttend}
+          </p>
+          <p className="text-gray-300 mt-2">
+            Rating: {contestDetails.contestRating.toFixed(2)}
+          </p>
+          <p className="text-gray-300 mt-2">
+            Global Ranking: {contestDetails.contestGlobalRanking}
+          </p>
+          <p className="text-gray-300 mt-2">
+            Total Participants: {contestDetails.totalParticipants}
+          </p>
+          <p className="text-gray-300 mt-2">
+            Top Percentage: {contestDetails.contestTopPercentage.toFixed(2)}%
+          </p>
+        </div>
+      )}
 
       {loadingBadges ? (
         <FadeLoader color={"#36D7B7"} loading={loadingBadges} />
       ) : (
         badges.length > 0 && (
-          <div className="bg-white  rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-800">Badges</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
+          <div className="  rounded-lg mb-6">
+            <h3 className="text-xl font-semibold text-white">Badges</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 mt-4">
               {badges.map((badge) => (
                 <div key={badge.id} className="flex flex-col items-center">
-                  <img
-                    src={
-                      badge.id === 4183371
-                        ? "https://leetcode.com/static/images/badges/dcc-2024-6.png"
-                        : badge.icon
-                    }
-                    alt={badge.displayName}
-                    className="w-16 h-16"
-                  />
-                  <p className="text-gray-600 mt-2 text-sm">
+                  {badge.id == 4183371 ? (
+                    <img
+                      src={
+                        "https://leetcode.com/static/images/badges/dcc-2024-6.png"
+                      }
+                      alt={badge.displayName}
+                      className="w-16 h-16"
+                    />
+                  ) : (
+                    <img
+                      src={badge.icon}
+                      alt={badge.displayName}
+                      className="w-16 h-16"
+                    />
+                  )}
+                  <p className="text-gray-300 mt-2 text-sm">
                     {badge.displayName}
                   </p>
                 </div>

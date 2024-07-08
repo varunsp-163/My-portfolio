@@ -1,32 +1,33 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ContactCode from "../components/ContactCode";
 import styles from "../styles/ContactPage.module.css";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const form = useRef();
 
   const submitForm = async (e) => {
     e.preventDefault();
-    console.log(process.env.NEXT_PUBLIC_API_URL);
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/contact`,
-      {
-        method: "POST",
-        body: JSON.stringify({ name, email, subject, message }),
-      }
-    );
-    if (res.ok) {
-      alert("Your response has been received!");
-      setName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    } else {
-      alert("There was an error. Please try again in a while.");
-    }
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
+        process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_YOUR_USER_ID // Include user ID if required
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -37,7 +38,7 @@ const ContactPage = () => {
       </div>
       <div>
         <h3 className={styles.heading}>Or Fill Out This Form</h3>
-        <form className={styles.form} onSubmit={submitForm}>
+        <form className={styles.form} ref={form} onSubmit={submitForm}>
           <div className={styles.flex}>
             <div>
               <label htmlFor="name">Name</label>
@@ -63,7 +64,7 @@ const ContactPage = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="name">Subject</label>
+            <label htmlFor="subject">Subject</label>
             <input
               type="text"
               name="subject"

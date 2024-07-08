@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@notionhq/client": "^0.2.2",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
