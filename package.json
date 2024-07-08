@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@notionhq/client": "^0.2.2",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
@@ -16,7 +17,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^3.2.2",
-    "react-spinners": "^0.14.1"
+    "react-spinners": "^0.14.1",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
