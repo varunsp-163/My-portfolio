@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="text-center w-full bg-gray-900 text-gray-100 py-10">
+    <div className="text-center w-full text-gray-100 py-10">
       <h1 className="text-4xl font-extrabold mb-6">A Little Bit About Me</h1>
       <p className="text-xl mb-4">
         Hello, I'm Varun S P. I'm a Front-end web developer/AWS cloud developer
