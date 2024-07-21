@@ -89,33 +89,35 @@ const Leetcode = () => {
   return (
     <div className="flex text-white flex-col items-center w-full">
       <div className=" rounded-lg  mb-6 flex items-center">
-        {loadingProfile ? (
-          <FadeLoader color={"#36D7B7"} loading={loadingProfile} />
-        ) : (
+        {!loadingProfile && !loadingContest && !loadingBadges && (
           <img
             src={userDetails.avatar}
             alt="User Avatar"
             className="w-24 h-24 rounded-full mx-auto md:mx-0 shadow-md"
           />
         )}
-        <div className="md:ml-6 text-center md:text-left">
-          {userDetails.name && (
-            <h2 className="text-2xl font-bold text-white">
-              {userDetails.name}
-            </h2>
-          )}
-          {userDetails.birthday && (
-            <p className="text-gray-300">Birthday: {userDetails.birthday}</p>
-          )}
-          {userDetails.ranking !== null && (
-            <p className="text-gray-300">Ranking: {userDetails.ranking}</p>
-          )}
-        </div>
+        {!loadingProfile && !loadingContest && !loadingBadges && (
+          <div className="md:ml-6 text-center md:text-left">
+            {userDetails.name && (
+              <h2 className="text-2xl font-bold text-white">
+                {userDetails.name}
+              </h2>
+            )}
+            {userDetails.birthday && (
+              <p className="text-gray-300">Birthday: {userDetails.birthday}</p>
+            )}
+            {userDetails.ranking !== null && (
+              <p className="text-gray-300">Ranking: {userDetails.ranking}</p>
+            )}
+          </div>
+        )}
       </div>
-
-      {loadingContest ? (
+      {loadingProfile && loadingContest && loadingBadges && (
         <FadeLoader color={"#36D7B7"} loading={loadingContest} />
-      ) : (
+      )}
+      {!loadingProfile &&
+        !loadingContest &&
+        !loadingBadges &&
         contestDetails.contestParticipation.length > 0 && (
           <div className="  rounded-lg mb-6">
             <h3 className="text-xl font-semibold text-white">
@@ -123,9 +125,8 @@ const Leetcode = () => {
             </h3>
             <Line data={chartData} />
           </div>
-        )
-      )}
-      {!loadingContest && (
+        )}
+      {!loadingProfile && !loadingContest && !loadingBadges && (
         <div className="  rounded-lg mb-6">
           <h3 className="text-xl font-semibold text-white">Contest Details</h3>
           <p className="text-gray-300 mt-2">
@@ -146,9 +147,9 @@ const Leetcode = () => {
         </div>
       )}
 
-      {loadingBadges ? (
-        <FadeLoader color={"#36D7B7"} loading={loadingBadges} />
-      ) : (
+      {!loadingProfile &&
+        !loadingContest &&
+        !loadingBadges &&
         badges.length > 0 && (
           <div className="  rounded-lg mb-6">
             <h3 className="text-xl font-semibold text-white">Badges</h3>
@@ -177,8 +178,7 @@ const Leetcode = () => {
               ))}
             </div>
           </div>
-        )
-      )}
+        )}
     </div>
   );
 };
