@@ -55,7 +55,7 @@ const AboutPage = () => {
       <div className="gap-4">
         <div className="border-2 border-green-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
           <h3 className="text-xl font-semibold">
-            BusyFit, Hyderabad (Remote) &ndash; Apr 2023 - Present
+            BusyFit, Hyderabad (Remote) &ndash; Apr 2024 - Present
           </h3>
           <p className="italic">React/AWS Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
