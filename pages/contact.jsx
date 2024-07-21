@@ -19,7 +19,7 @@ const ContactPage = () => {
         process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
         process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
         form.current,
-        process.env.NEXT_PUBLIC_YOUR_USER_ID // Include user ID if required
+        process.env.NEXT_PUBLIC_YOUR_USER_ID 
       )
       .then(
         (result) => {
