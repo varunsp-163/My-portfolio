@@ -51,8 +51,18 @@ const Leetcode = () => {
           axios.get("https://alfa-leetcode-api.onrender.com/spvarun47/badges"),
           axios.get("https://alfa-leetcode-api.onrender.com/spvarun47/contest"),
         ]);
+
+        const badgesData = badgesRes.data.badges.map((badge) => {
+          if (badge.icon.startsWith("/static")) {
+            badge.icon = `https://assets.leetcode.com/static_assets/public/images/badges/${badge.icon
+              .split("/")
+              .pop()}`;
+          }
+          return badge;
+        });
+
         setUserDetails(profileRes.data);
-        setBadges(badgesRes.data.badges);
+        setBadges(badgesData);
         setContestDetails(contestRes.data);
         setLoadingProfile(false);
         setLoadingBadges(false);
@@ -88,7 +98,7 @@ const Leetcode = () => {
 
   return (
     <div className="flex text-white flex-col items-center w-full">
-      <div className=" rounded-lg  mb-6 flex items-center">
+      <div className="rounded-lg mb-6 flex items-center">
         {!loadingProfile && !loadingContest && !loadingBadges && (
           <img
             src={userDetails.avatar}
@@ -112,22 +122,28 @@ const Leetcode = () => {
           </div>
         )}
       </div>
-      {loadingProfile && loadingContest && loadingBadges && (
-        <FadeLoader color={"#36D7B7"} loading={loadingContest} />
+
+      {(loadingProfile || loadingContest || loadingBadges) && (
+        <FadeLoader
+          color={"#36D7B7"}
+          loading={loadingProfile || loadingContest || loadingBadges}
+        />
       )}
+
       {!loadingProfile &&
         !loadingContest &&
         !loadingBadges &&
         contestDetails.contestParticipation.length > 0 && (
-          <div className="  rounded-lg mb-6">
+          <div className="rounded-lg mb-6">
             <h3 className="text-xl font-semibold text-white">
               Contest Rankings Graph
             </h3>
             <Line data={chartData} />
           </div>
         )}
+
       {!loadingProfile && !loadingContest && !loadingBadges && (
-        <div className="  rounded-lg mb-6">
+        <div className="rounded-lg mb-6">
           <h3 className="text-xl font-semibold text-white">Contest Details</h3>
           <p className="text-gray-300 mt-2">
             Attended: {contestDetails.contestAttend}
@@ -151,26 +167,16 @@ const Leetcode = () => {
         !loadingContest &&
         !loadingBadges &&
         badges.length > 0 && (
-          <div className="  rounded-lg mb-6">
+          <div className="rounded-lg mb-6">
             <h3 className="text-xl font-semibold text-white">Badges</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 mt-4">
               {badges.map((badge) => (
-                <div key={badge.id} className="flex flex-col items-center">
-                  {badge.id == 4183371 ? (
-                    <img
-                      src={
-                        "https://leetcode.com/static/images/badges/dcc-2024-6.png"
-                      }
-                      alt={badge.displayName}
-                      className="w-16 h-16"
-                    />
-                  ) : (
-                    <img
-                      src={badge.icon}
-                      alt={badge.displayName}
-                      className="w-16 h-16"
-                    />
-                  )}
+                <div key={badge.id} className="flex flex-col items-center p-4">
+                  <img
+                    src={badge.icon}
+                    alt={badge.displayName}
+                    className="w-20 h-20"
+                  />
                   <p className="text-gray-300 mt-2 text-sm">
                     {badge.displayName}
                   </p>
