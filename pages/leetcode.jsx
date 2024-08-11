@@ -78,16 +78,16 @@ const Leetcode = () => {
   const contestTitles = contestDetails.contestParticipation.map(
     (contest) => contest.contest.title
   );
-  const contestRankings = contestDetails.contestParticipation.map(
-    (contest) => contest.ranking
+  const contestRatings = contestDetails.contestParticipation.map(
+    (contest) => contest.rating
   );
 
   const chartData = {
     labels: contestTitles,
     datasets: [
       {
-        label: "Contest Rankings",
-        data: contestRankings,
+        label: "Contest Ratings",
+        data: contestRatings,
         borderColor: "rgba(75,192,192,1)",
         backgroundColor: "rgba(75,192,192,0.2)",
         fill: true,
@@ -95,6 +95,7 @@ const Leetcode = () => {
       },
     ],
   };
+  // console.log("contestDetails", contestDetails);
 
   return (
     <div className="flex text-white flex-col items-center w-full">
