@@ -2,58 +2,69 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="text-center w-full text-gray-100 py-10">
-      <h1 className="text-4xl font-extrabold mb-6">A Little Bit About Me</h1>
-      <p className="text-xl mb-4">
+    <div className="container mx-auto px-4 py-10 text-gray-100">
+      <h1 className="text-4xl font-extrabold mb-6 text-center">
+        A Little Bit About Me
+      </h1>
+      <p className="text-xl mb-4 text-center">
         Hello, I'm Varun S P. I'm a Front-end web developer/AWS cloud developer
         and Tech Enthusiast from Bangalore, Karnataka.
       </p>
-      <p className="text-xl mb-6">
+      <p className="text-xl mb-6 text-center">
         I am pursuing my graduation in Computer Science and Engineering from VIT
         Vellore.
       </p>
 
-      <h2 className="text-3xl font-bold mb-4">Skills and Certifications</h2>
-      <div className="gap-4">
-        <div className="border-2 border-blue-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
-          <strong>Languages:</strong> C/C++, Java, Python, JavaScript, SQL
+      <h2 className="text-3xl font-bold mb-6 text-center">
+        Skills and Certifications
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <strong className="text-lg">Languages:</strong> C/C++, Java, Python,
+          JavaScript, SQL
         </div>
-        <div className="border-2 border-blue-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
-          <strong>Technologies & Tools:</strong> AWS, EC2, DynamoDB, S3, SQS,
-          Lambda, EventBridge, ReactJS, Node.js, Cognito, AWS Amplify, Tailwind
-          CSS, Bootstrap, Git, Github, Material UI, Chakra UI, Firebase,
-          Next.js, Redux, Figma, Vercel, MongoDB, Postman
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <strong className="text-lg">Technologies & Tools:</strong> AWS, EC2,
+          DynamoDB, S3, SQS, Lambda, EventBridge, ReactJS, Node.js, Cognito, AWS
+          Amplify, Tailwind CSS, Bootstrap, Git, Github, Material UI, Chakra UI,
+          Firebase, Next.js, Redux, Figma, Vercel, MongoDB, Postman
         </div>
-        <div className="border-2 border-blue-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <a
-            className="underline text-blue-400 hover:text-blue-600 transition duration-300"
+            className="block text-blue-400 hover:text-blue-600 transition duration-300"
             href="https://www.credly.com/badges/59a4d4b8-2872-47fe-8324-cd57021d38ae"
             target="_blank"
             rel="noopener noreferrer"
           >
             AWS Certified Cloud Practitioner
           </a>
-          : Demonstrated foundational knowledge of AWS cloud services and
-          solutions, ensuring effective cloud implementation and management.
+          <p className="mt-2">
+            Demonstrated foundational knowledge of AWS cloud services and
+            solutions, ensuring effective cloud implementation and management.
+          </p>
         </div>
-        <div className="border-2 border-blue-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <a
-            className="underline text-blue-400 hover:text-blue-600 transition duration-300"
+            className="block text-blue-400 hover:text-blue-600 transition duration-300"
             href="https://www.credly.com/badges/d7f3a630-f66e-47dd-bdf1-193014bfcc70"
             target="_blank"
             rel="noopener noreferrer"
           >
             AWS Certified Solutions Architect – Associate
           </a>
-          : Proficient in designing and deploying scalable, highly available,
-          and fault-tolerant systems on AWS, leveraging best practices for
-          secure and robust cloud architecture.
+          <p className="mt-2">
+            Proficient in designing and deploying scalable, highly available,
+            and fault-tolerant systems on AWS, leveraging best practices for
+            secure and robust cloud architecture.
+          </p>
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold mt-10 mb-4">Work Experience</h2>
-      <div className="gap-4">
-        <div className="border-2 border-green-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
+      <h2 className="text-3xl font-bold mt-10 mb-6 text-center">
+        Work Experience
+      </h2>
+      <div className="space-y-6">
+        <div className="bg-gray-800 border border-green-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
             BusyFit, Hyderabad (Remote) &ndash; Apr 2024 - Present
           </h3>
@@ -87,13 +98,15 @@ const AboutPage = () => {
             JavaScript, OpenAI, Gemini AI
           </p>
         </div>
-        <div className="border-2 border-green-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
+        <div className="bg-gray-800 border border-green-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
             <a
               href="https://drive.google.com/file/d/1pjiCCAn-4YVxyk4WwuS-ByibYQ2UGShX/view?usp=sharing"
-              target="/"
+              target="_blank"
               className="underline underline-offset-8"
-            >BusyFit</a>
+            >
+              BusyFit
+            </a>
             , Hyderabad (Remote) &ndash; Oct 2023 - Mar 2024
           </h3>
           <p className="italic">React/AWS Developer</p>
@@ -121,16 +134,16 @@ const AboutPage = () => {
             </li>
           </ul>
           <p className="mt-2">
-            <strong>Skills:</strong> React js, AWS, DynamoDB, S3, Lambda,
+            <strong>Skills:</strong> React.js, AWS, DynamoDB, S3, Lambda,
             EventBridge, CloudWatch, API Gateway, Python, Gemini AI
           </p>
         </div>
-        <div className="border-2 border-green-600 text-gray-200 py-3 px-5 m-3 rounded-lg">
+        <div className="bg-gray-800 border border-green-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
             <a
               className="underline underline-offset-8"
               href="https://drive.google.com/file/d/1bEhQV7DMqXW9V-rtJnBbWKTUP1aYbB2e/view?usp=sharing"
-              target="/"
+              target="_blank"
             >
               Valsco Technology Pvt. Ltd
             </a>
