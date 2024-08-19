@@ -20,39 +20,53 @@ const AboutPage = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
-          <strong className="text-lg">Languages:</strong> C/C++, Java, Python,
-          JavaScript, SQL
+          <h3 className="text-lg font-semibold mb-2">Programming Languages</h3>
+          <p>C++, Go, Java, JavaScript, SQL, Python</p>
         </div>
         <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
-          <strong className="text-lg">Technologies & Tools:</strong> AWS, EC2,
-          DynamoDB, S3, SQS, Lambda, EventBridge, ReactJS, Node.js, Cognito, AWS
-          Amplify, Tailwind CSS, Bootstrap, Git, Github, Material UI, Chakra UI,
-          Firebase, Next.js, Redux, Figma, Vercel, MongoDB, Postman
+          <h3 className="text-lg font-semibold mb-2">Frontend Technologies</h3>
+          <p>
+            ReactJS, NextJS, Redux, HTML, CSS, Tailwind CSS, ChakraUI, Bootstrap
+          </p>
         </div>
         <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
-          <a
-            className="block text-blue-400 hover:text-blue-600 transition duration-300"
-            href="https://www.credly.com/badges/59a4d4b8-2872-47fe-8324-cd57021d38ae"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            AWS Certified Cloud Practitioner
-          </a>
-          <p className="mt-2">
+          <h3 className="text-lg font-semibold mb-2">Backend/DevOps</h3>
+          <p>AWS, NodeJS, ExpressJS, MongoDB, DynamoDB, Docker, Kubernetes</p>
+        </div>
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">
+            Other Technologies & Tools
+          </h3>
+          <p>GitHub, Postman, Vercel, IaC, Scrum Agile, Jira</p>
+        </div>
+        <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">
+            <a
+              className="text-blue-400 hover:text-blue-600 transition duration-300"
+              href="https://www.credly.com/badges/59a4d4b8-2872-47fe-8324-cd57021d38ae"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AWS Certified Cloud Practitioner
+            </a>
+          </h3>
+          <p>
             Demonstrated foundational knowledge of AWS cloud services and
             solutions, ensuring effective cloud implementation and management.
           </p>
         </div>
         <div className="bg-gray-800 border border-blue-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
-          <a
-            className="block text-blue-400 hover:text-blue-600 transition duration-300"
-            href="https://www.credly.com/badges/d7f3a630-f66e-47dd-bdf1-193014bfcc70"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            AWS Certified Solutions Architect – Associate
-          </a>
-          <p className="mt-2">
+          <h3 className="text-lg font-semibold mb-2">
+            <a
+              className="text-blue-400 hover:text-blue-600 transition duration-300"
+              href="https://www.credly.com/badges/d7f3a630-f66e-47dd-bdf1-193014bfcc70"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AWS Certified Solutions Architect – Associate
+            </a>
+          </h3>
+          <p>
             Proficient in designing and deploying scalable, highly available,
             and fault-tolerant systems on AWS, leveraging best practices for
             secure and robust cloud architecture.
@@ -66,7 +80,7 @@ const AboutPage = () => {
       <div className="space-y-6">
         <div className="bg-gray-800 border border-green-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
-            BusyFit, Hyderabad (Remote) &ndash; Apr 2024 - Present
+            BusyFit, Hyderabad (Remote) – Apr 2024 - Present
           </h3>
           <p className="italic">React/AWS Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
@@ -107,7 +121,7 @@ const AboutPage = () => {
             >
               BusyFit
             </a>
-            , Hyderabad (Remote) &ndash; Oct 2023 - Mar 2024
+            , Hyderabad (Remote) – Oct 2023 - Mar 2024
           </h3>
           <p className="italic">React/AWS Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
@@ -147,7 +161,7 @@ const AboutPage = () => {
             >
               Valsco Technology Pvt. Ltd
             </a>
-            , Delhi (Remote) &ndash; Sept 2023 - Dec 2023
+            , Delhi (Remote) – Sept 2023 - Dec 2023
           </h3>
           <p className="italic">Frontend Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
@@ -171,6 +185,40 @@ const AboutPage = () => {
             Figma, Vercel
           </p>
         </div>
+      </div>
+
+      <h2 className="text-3xl font-bold mt-10 mb-6 text-center">
+        Research Work
+      </h2>
+      <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+        <h3 className="text-xl font-semibold">
+          Lung Cancer Detection Using Deep Learning Techniques (In Progress)
+        </h3>
+        <ul className="list-disc list-inside mt-2 text-left">
+          <li>
+            Conducted research on early detection and prediction of lung cancer
+            using Convolutional Neural Networks (CNN), focusing on combining
+            VGG16 and InceptionV3 models.
+          </li>
+          <li>
+            Developed a hybrid deep learning model utilizing VGG16 and
+            InceptionV3 architectures to enhance feature extraction and improve
+            classification accuracy.
+          </li>
+          <li>
+            Implemented the model in TensorFlow, achieving significant accuracy
+            improvements in image classification tasks related to lung cancer
+            detection.
+          </li>
+          <li>
+            Employed tools such as Python, NumPy, Pandas, and Matplotlib for
+            data preprocessing, analysis, and visualization.
+          </li>
+          <li>
+            Utilized various metrics and graphs for evaluating model
+            performance, ensuring robust validation of the proposed approach.
+          </li>
+        </ul>
       </div>
     </div>
   );
