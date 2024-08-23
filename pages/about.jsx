@@ -186,7 +186,8 @@ const AboutPage = () => {
           </p>
         </div>
       </div>
-
+      {/* Research Work */}
+      {/* Research Work */}
       <h2 className="text-3xl font-bold mt-10 mb-6 text-center">
         Research Work
       </h2>
@@ -196,27 +197,33 @@ const AboutPage = () => {
         </h3>
         <ul className="list-disc list-inside mt-2 text-left">
           <li>
-            Conducted research on early detection and prediction of lung cancer
-            using Convolutional Neural Networks (CNN), focusing on combining
-            VGG16 and InceptionV3 models.
+            Conducted research on the <strong>early detection</strong> and{" "}
+            <strong>prediction</strong> of lung cancer using{" "}
+            <strong>Convolutional Neural Networks (CNN)</strong>, focusing on
+            combining <strong>VGG16</strong> and <strong>InceptionV3</strong>{" "}
+            models.
           </li>
           <li>
-            Developed a hybrid deep learning model utilizing VGG16 and
-            InceptionV3 architectures to enhance feature extraction and improve
-            classification accuracy.
+            Developed a hybrid deep learning model utilizing{" "}
+            <strong>VGG16</strong> and{" "}
+            <strong>InceptionV3 architectures</strong> to enhance feature
+            extraction and improve classification accuracy.
           </li>
           <li>
-            Implemented the model in TensorFlow, achieving significant accuracy
-            improvements in image classification tasks related to lung cancer
-            detection.
+            Achieved an accuracy of <strong>0.9067</strong> in classifying lung
+            conditions into <strong>benign</strong>, <strong>malignant</strong>,
+            and <strong>normal</strong> categories.
           </li>
           <li>
-            Employed tools such as Python, NumPy, Pandas, and Matplotlib for
-            data preprocessing, analysis, and visualization.
+            Employed tools such as <strong>Python</strong>,{" "}
+            <strong>NumPy</strong>, <strong>Pandas</strong>, and{" "}
+            <strong>Matplotlib</strong> for data preprocessing, analysis, and
+            visualization.
           </li>
           <li>
-            Utilized various metrics and graphs for evaluating model
-            performance, ensuring robust validation of the proposed approach.
+            Utilized various <strong>metrics</strong> and{" "}
+            <strong>graphs</strong> to evaluate model performance, ensuring
+            robust validation of the proposed approach.
           </li>
         </ul>
       </div>
