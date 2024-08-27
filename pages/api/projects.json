@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "name": "Bajaj finserv Assignment",
+    "image": "https://imgur.com/PNxaPpJ.png",
+    "description": "This was an assignment for Bajaj finserv for full stack role",
+    "tags": ["React", "Tailwind css", "Node JS"],
+    "source_code": "https://github.com/varunsp-163/test-bajaj",
+    "demo": "https://test-bajaj.vercel.app/"
+  },
+  {
+    "id": 2,
     "name": "Car-Rental",
     "image": "https://imgur.com/XKRnUrB.png",
     "description": "A platform for travelers who can book cars for their needs",
@@ -9,7 +18,7 @@
     "demo": "https://www.youtube.com/watch?v=G7Ydz7f2SQw"
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Promptopia",
     "image": "https://imgur.com/fEmgn6z.png",
     "description": "A platform for coders to store their prompts and share with others",
@@ -18,16 +27,16 @@
     "demo": "https://project-promptopia-j8qw3pxrb-varunsp-163.vercel.app/"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "IK-APP",
     "image": "https://imgur.com/PAvYxLu.png",
     "description": "Made a demo landing page for IK developers",
-    "tags": ["Next","Firebase","Tailwind css","Responsive design"],
+    "tags": ["Next", "Firebase", "Tailwind css", "Responsive design"],
     "source_code": "https://github.com/varunsp-163/IK-app",
     "demo": "https://ik-app.vercel.app/"
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "Amz-React",
     "image": "https://imgur.com/HXEigf5.png",
     "description": "A simple react project, where I integrated basic sorting functionality",
@@ -36,7 +45,7 @@
     "demo": "https://amz-react-eight.vercel.app/"
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "Shop-React",
     "image": "https://imgur.com/yRvAMUi.png",
     "description": "A food ordering platform for healthy and home-cooked meals",
@@ -45,7 +54,7 @@
     "demo": "https://varunsp-163.github.io/Shop-react/"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Sci Astra",
     "image": "https://imgur.com/dn5SRDG.png",
     "description": "A team page made for sciastra",
@@ -54,7 +63,7 @@
     "demo": "https://sci-astra-wheat.vercel.app/"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Rent a car",
     "image": "https://imgur.com/aEwgaXD.png",
     "description": "A simple web app where I exercised some pagination, redux and many other concepts",
