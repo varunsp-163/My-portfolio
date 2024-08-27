@@ -85,6 +85,10 @@ const AboutPage = () => {
           <p className="italic">React/AWS Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
             <li>
+              Created a Lambda trigger to utilize the EventBridge rule and
+              update respective DynamoDB tables
+            </li>
+            <li>
               Made a POC for implementing the RAG model with Gemini AI using AWS
               Bedrock and creating an event to sync with the knowledge base and
               extract required fields from a document in S3.
@@ -161,7 +165,7 @@ const AboutPage = () => {
             >
               Valsco Technology Pvt. Ltd
             </a>
-            , Delhi (Remote) – Sept 2023 - Dec 2023
+            , Delhi (Remote) - Sept 2023 - Dec 2023
           </h3>
           <p className="italic">Frontend Developer</p>
           <ul className="list-disc list-inside mt-2 text-left">
@@ -186,7 +190,6 @@ const AboutPage = () => {
           </p>
         </div>
       </div>
-      {/* Research Work */}
       {/* Research Work */}
       <h2 className="text-3xl font-bold mt-10 mb-6 text-center">
         Research Work
