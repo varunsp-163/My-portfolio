@@ -7,12 +7,13 @@ const AboutPage = () => {
         A Little Bit About Me
       </h1>
       <p className="text-xl mb-4 text-center">
-        Hello, I'm Varun S P. I'm a Front-end web developer/AWS cloud developer
-        and Tech Enthusiast from Bangalore, Karnataka.
+        Hello, I'm Varun S P, a passionate Frontend Developer, AWS Cloud
+        Developer, and tech enthusiast from Bangalore, Karnataka.
       </p>
       <p className="text-xl mb-6 text-center">
-        I am pursuing my graduation in Computer Science and Engineering from VIT
-        Vellore.
+        Currently pursuing a Bachelor's degree in Computer Science and
+        Engineering at VIT Vellore, I thrive on creating impactful solutions
+        through cutting-edge technology.
       </p>
 
       <h2 className="text-3xl font-bold mb-6 text-center">
@@ -190,45 +191,120 @@ const AboutPage = () => {
           </p>
         </div>
       </div>
-      {/* Research Work */}
-      <h2 className="text-3xl font-bold mt-10 mb-6 text-center">
-        Research Work
-      </h2>
-      <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
-        <h3 className="text-xl font-semibold">
-          Lung Cancer Detection Using Deep Learning Techniques (In Progress)
-        </h3>
-        <ul className="list-disc list-inside mt-2 text-left">
-          <li>
-            Conducted research on the <strong>early detection</strong> and{" "}
-            <strong>prediction</strong> of lung cancer using{" "}
-            <strong>Convolutional Neural Networks (CNN)</strong>, focusing on
-            combining <strong>VGG16</strong> and <strong>InceptionV3</strong>{" "}
-            models.
-          </li>
-          <li>
-            Developed a hybrid deep learning model utilizing{" "}
-            <strong>VGG16</strong> and{" "}
-            <strong>InceptionV3 architectures</strong> to enhance feature
-            extraction and improve classification accuracy.
-          </li>
-          <li>
-            Achieved an accuracy of <strong>0.9067</strong> in classifying lung
-            conditions into <strong>benign</strong>, <strong>malignant</strong>,
-            and <strong>normal</strong> categories.
-          </li>
-          <li>
-            Employed tools such as <strong>Python</strong>,{" "}
-            <strong>NumPy</strong>, <strong>Pandas</strong>, and{" "}
-            <strong>Matplotlib</strong> for data preprocessing, analysis, and
-            visualization.
-          </li>
-          <li>
-            Utilized various <strong>metrics</strong> and{" "}
-            <strong>graphs</strong> to evaluate model performance, ensuring
-            robust validation of the proposed approach.
-          </li>
-        </ul>
+      <h2 className="text-3xl font-bold mt-10 mb-6 text-center">Projects</h2>
+      <div className="space-y-6">
+        <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold">
+            Real-Time Human Detection in Disaster Scenarios Using UAV Imagery |{" "}
+            <a
+              href="https://drive.google.com/file/d/1s783HUXPCmDV9KfbaURuDJqZuET0jg2E/view?usp=sharing"
+              className="underline"
+            >
+              Report
+            </a>
+          </h3>
+          <ul className="list-disc list-inside mt-2 text-left">
+            <li>
+              Developed a GUI-based application for real-time human detection in
+              disaster scenarios, leveraging UAV imagery for effective emergency
+              response.
+            </li>
+            <li>
+              Implemented a model cascading approach combining{" "}
+              <strong>YOLOv8-n</strong> for initial detection and{" "}
+              <strong>PP-YOLOe</strong> for refining results to improve
+              precision and reduce false positives.
+            </li>
+            <li>
+              Integrated multimodal data, including RGB, thermal, and
+              multispectral imagery, to enhance detection accuracy under varying
+              conditions. Achieved an accuracy of <strong>90.2%</strong>.
+            </li>
+            <li>
+              Utilized tools and frameworks such as <strong>Python</strong>,{" "}
+              <strong>PyTorch</strong>,<strong>OpenCV</strong>, and{" "}
+              <strong>Tkinter</strong> for model implementation, data fusion,
+              and GUI development.
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold">
+            Lung Cancer Detection Using Deep Learning Techniques |{" "}
+            <span className="underline">Research Paper</span>
+          </h3>
+          <ul className="list-disc list-inside mt-2 text-left">
+            <li>
+              Conducted research on the early detection and prediction of lung
+              cancer using Convolutional Neural Networks (CNN), focusing on
+              combining
+              <strong>VGG16</strong> and <strong>U-Net++</strong> models.
+            </li>
+            <li>
+              Developed a hybrid deep learning model utilizing{" "}
+              <strong>VGG16</strong> and
+              <strong>U-Net++</strong> architectures to enhance feature
+              extraction and improve classification accuracy.
+            </li>
+            <li>
+              Achieved an accuracy of <strong>96%</strong> in classifying lung
+              conditions into benign, malignant, and normal categories.
+            </li>
+            <li>
+              Utilized various metrics and graphs to evaluate model performance,
+              ensuring robust validation of the proposed approach.
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold">
+            RAG-Email |{" "}
+            <a
+              href="https://github.com/varunsp-163/Rag-Email"
+              className="underline"
+            >
+              Code
+            </a>{" "}
+          </h3>
+          <ul className="list-disc list-inside mt-2 text-left">
+            <li>
+              Built a full-stack, AI-powered email client using{" "}
+              <strong>Next.js 14</strong>, providing a modern and responsive
+              user interface with dynamic email management features.
+            </li>
+            <li>
+              Integrated <strong>Clerk</strong> for authentication, leveraging
+              secure login and user management capabilities, including social
+              login and role-based access control.
+            </li>
+            <li>
+              Utilized <strong>Prisma ORM</strong> with{" "}
+              <strong>PostgreSQL</strong> for robust relational database
+              management and efficient data handling.
+            </li>
+            <li>
+              Leveraged <strong>Pinecone</strong> for vector-based semantic
+              search, enabling rapid and accurate email content retrieval.
+            </li>
+            <li>
+              Optimized performance and scalability using
+              <strong> Neon DB</strong> serverless architecture to handle
+              variable database loads seamlessly.
+            </li>
+            <li>
+              Designed a clean and modern user interface using
+              <strong>Tailwind CSS</strong>, ensuring rapid development and
+              responsiveness.
+            </li>
+            <li>
+              Deployed on <strong>AWS</strong> for reliable scalability and
+              cloud service integration, enhancing application performance and
+              availability.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
