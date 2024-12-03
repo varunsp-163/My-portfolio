@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "name": "Promptopia",
+    "image": "https://imgur.com/fEmgn6z.png",
+    "description": "A platform for coders to store their prompts and share with others",
+    "tags": ["Next", "Mongodb", "Tailwind css", "OAuth", "Nodemailer"],
+    "source_code": "https://github.com/varunsp-163/prompts",
+    "demo": "https://prompts-tau.vercel.app/"
+  },
+  {
+    "id": 2,
     "name": "Bajaj finserv Assignment",
     "image": "https://imgur.com/PNxaPpJ.png",
     "description": "This was an assignment for Bajaj finserv for full stack role",
@@ -9,7 +18,7 @@
     "demo": "https://test-bajaj.vercel.app/"
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Car-Rental",
     "image": "https://imgur.com/XKRnUrB.png",
     "description": "A platform for travelers who can book cars for their needs",
@@ -17,15 +26,7 @@
     "source_code": "https://github.com/varunsp-163/CAR-RENTAL",
     "demo": "https://www.youtube.com/watch?v=G7Ydz7f2SQw"
   },
-  {
-    "id": 3,
-    "name": "Promptopia",
-    "image": "https://imgur.com/fEmgn6z.png",
-    "description": "A platform for coders to store their prompts and share with others",
-    "tags": ["Next", "Mongodb", "Tailwind css", "OAuth"],
-    "source_code": "https://github.com/varunsp-163/prompts",
-    "demo": "https://project-promptopia-j8qw3pxrb-varunsp-163.vercel.app/"
-  },
+
   {
     "id": 4,
     "name": "IK-APP",
