@@ -193,7 +193,7 @@ const AboutPage = () => {
       </div>
       <h2 className="text-3xl font-bold mt-10 mb-6 text-center">Projects</h2>
       <div className="space-y-6">
-        <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
+        {/* <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
             Real-Time Human Detection in Disaster Scenarios Using UAV Imagery |{" "}
             <a
@@ -227,7 +227,7 @@ const AboutPage = () => {
               and GUI development.
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="bg-gray-800 border border-red-600 text-gray-200 py-4 px-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold">
