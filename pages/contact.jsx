@@ -14,12 +14,20 @@ const ContactPage = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
+
+    const templateParams = {
+      to_name: name,
+      from_name: email,
+      subject,
+      message,
+    };
+
     emailjs
-      .sendForm(
+      .send(
         process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
         process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_YOUR_USER_ID 
+        templateParams,
+        process.env.NEXT_PUBLIC_YOUR_USER_ID
       )
       .then(
         (result) => {
@@ -32,6 +40,11 @@ const ContactPage = () => {
             draggable: true,
             progress: undefined,
           });
+
+          setName("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
         },
         (error) => {
           toast.error("Failed to send message. Please try again.", {
