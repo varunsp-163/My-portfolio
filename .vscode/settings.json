@@ -1,0 +1,14 @@
+{
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "javascript.format.enable": false,
+  "json.format.enable": true,
+  "eslint.format.enable": true,
+  "css.format.enable": true,
+  "css.format.newlineBetweenRules": true,
+  "css.format.newlineBetweenSelectors": true,
+  "css.format.preserveNewLines": true
+}

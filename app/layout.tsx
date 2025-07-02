@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Varun S P | Software Engineer",
   description:
     "Hello! I am Varun S P, a Software Engineer & an entrepreneur, and this is my Portfolio Website! Get to know my skills, experience, projects and much more!",
-  metadataBase: new URL("https://www.sarthakbharadwaj.com"),
+  metadataBase: new URL("https://varunsp.vercel.app/"),
   openGraph: {
     type: "website",
     url: "https://varunsp.vercel.app/",
