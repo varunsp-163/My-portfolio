@@ -96,6 +96,10 @@ const GithubSection = () => {
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
+
+  const resolvedTheme =
+    pageTheme === "dark" || pageTheme === "light" ? pageTheme : "dark";
+
   return (
     <div className="p-4 flex flex-col items-center justify-center my-6">
       <div className="mb-4 flex flex-col items-center justify-center">
@@ -132,7 +136,7 @@ const GithubSection = () => {
           theme={theme}
           hideColorLegend
           hideMonthLabels
-          colorScheme={pageTheme || "dark"}
+          colorScheme={resolvedTheme}
         />
         <BorderBeam duration={6} size={100} />
         <BorderBeam duration={6} size={100} delay={6} />
