@@ -101,45 +101,45 @@ const GithubSection = () => {
     pageTheme === "dark" || pageTheme === "light" ? pageTheme : "dark";
 
   return (
-    <div className="p-4 flex flex-col items-center justify-center my-6">
+    <div className="p-4 flex flex-col items-center justify-center my-6 w-[100%]">
       <div className="mb-4 flex flex-col items-center justify-center">
         <Image
           src={user.avatar_url}
           alt={user.login}
-          width={70}
-          height={70}
+          width={90}
+          height={90}
           style={{ borderRadius: "50%" }}
         />
 
         <TypewriterEffectSmooth words={words} />
-        {/* <h3 className="text-lg font-semibold">{user.login}</h3> */}
 
         <p className="text-2xl font-bold tracking-tighter text-black dark:text-white flex">
           <NumberTicker
             value={user.public_repos}
-            className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white"
+            className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white mr-1"
           />{" "}
           Repositories
         </p>
         <p className="text-2xl font-bold tracking-tighter text-black dark:text-white">
           <NumberTicker
             value={user.followers}
-            className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white"
+            className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white mr-1"
           />{" "}
           Followers
         </p>
       </div>
 
-      <div className="relative mb-4">
-        <GitHubCalendar
-          username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
-          theme={theme}
-          hideColorLegend
-          hideMonthLabels
-          colorScheme={resolvedTheme}
-        />
-        <BorderBeam duration={6} size={100} />
-        <BorderBeam duration={6} size={100} delay={6} />
+      <div className="mb-4 flex flex-col items-center justify-center">
+        <div className="relative w-full min-w-[320px]">
+          <GitHubCalendar
+            username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
+            theme={theme}
+            hideColorLegend
+            hideMonthLabels
+            colorScheme={resolvedTheme}
+          />
+          <BorderBeam duration={8} size={100} />
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-4 justify-center w-full">
