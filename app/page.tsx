@@ -17,7 +17,7 @@ export default function Home() {
       {/* <SkillSection /> */}
       <ExperienceSection />
       <GithubSection />
-      {/* <LeetcodeSection /> */}
+      <LeetcodeSection />
       <ThankSection />
       <ResumeDock />
     </div>

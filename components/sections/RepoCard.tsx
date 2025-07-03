@@ -10,7 +10,6 @@ import { Meteors } from "../ui/meteors";
 
 const RepoCard = ({ repo }: { repo: any }) => {
   const { theme } = useTheme();
-  console.log("Current theme:", theme);
 
   return (
     <div className="border p-4 rounded-xl w-full max-w-md shadow-md transition hover:shadow-lg dark:bg-[#0d1117] dark:border-[#30363d] dark:text-white bg-white border-gray-300 text-gray-800">

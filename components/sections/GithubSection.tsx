@@ -15,6 +15,7 @@ import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { BorderBeam } from "../magicui/border-beam";
 import { NumberTicker } from "../magicui/number-ticker";
 import { FlipText } from "../magicui/flip-text";
+import { FadeLoader } from "react-spinners";
 
 const GithubSection = () => {
   const [user, setUser] = useState<any>(null);
@@ -79,8 +80,18 @@ const GithubSection = () => {
     fetchGitHubData();
   }, []);
 
-  if (error) return <p>{error}</p>;
-  if (!user) return <p>Loading...</p>;
+  if (error)
+    return (
+      <div className="w-full items-center justify-center flex felx-col">
+        <p>{error}</p>;
+      </div>
+    );
+  if (!user)
+    return (
+      <div className="w-full items-center justify-center flex felx-col">
+        <FadeLoader color={"#36D7B7"} loading={true} />
+      </div>
+    );
   const words = [
     {
       text: "Checkout",
@@ -129,7 +140,7 @@ const GithubSection = () => {
         </p>
       </div>
 
-      <div className="mb-4 flex flex-col items-center justify-center relative w-full max-w-screen-md">
+      <div className="mb-4 relative max-w-[90vw]">
         <div className="w-full">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
