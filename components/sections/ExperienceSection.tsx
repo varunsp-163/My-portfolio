@@ -153,11 +153,7 @@ const ExperienceSection = () => {
 
   return (
     <div className="relative w-full overflow-clip">
-      <Timeline
-        data={data}
-        title="My Professional Journey"
-        description="Detailed timeline of my education, work experience, and certifications"
-      />
+      <Timeline data={data} />
     </div>
   );
 };
