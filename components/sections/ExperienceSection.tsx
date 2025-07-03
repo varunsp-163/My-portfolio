@@ -184,7 +184,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="relative w-full overflow-clip">
+    <div className="relative w-full overflow-clip flex flex-col items-center justify-center">
       <Timeline data={data} />
     </div>
   );

@@ -9,7 +9,7 @@ import { PointerHighlight } from "../ui/pointer-highlight";
 
 const IntroSection = () => {
   return (
-    <div className="w-full flex flex-col overflow-x-hidden" id="about">
+    <div className="w-full flex flex-col overflow-x-hidden items-center justify-center" id="about">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

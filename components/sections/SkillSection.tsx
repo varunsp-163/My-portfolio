@@ -13,7 +13,7 @@ const SkillSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sm:px-30 px-8 mt-30 py-10 flex flex-col gap-8 overflow-x-hidden"
+      className="sm:px-30 px-8 mt-30 py-10 flex flex-col gap-8 overflow-x-hidden items-center justify-center"
     >
       <div className="flex justify-center items-center flex-col gap-4">
         <Badge
