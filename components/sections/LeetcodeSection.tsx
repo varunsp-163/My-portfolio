@@ -266,11 +266,11 @@ const LeetcodeSection = () => {
                 <div className="space-y-1 text-center md:text-left">
                   <h2 className="text-3xl font-bold">{userDetails.name}</h2>
                   <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    {userDetails.birthday && (
+                    {/* {userDetails.birthday && (
                       <Badge variant="outline" className="text-lg">
                         🎂 {userDetails.birthday}
                       </Badge>
-                    )}
+                    )} */}
                     {userDetails.ranking !== null && (
                       <Badge variant="secondary" className="text-lg">
                         🏆 Rank #{userDetails.ranking}

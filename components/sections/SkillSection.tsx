@@ -75,7 +75,7 @@ const SkillSection = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
         className="flex justify-center"
       >
-        <h2 className="sm:text-2xl text-xl font-bold tracking-wide text-secondary">
+        <h2 className="sm:text-2xl text-xl font-bold tracking-wide text-[#8D60E0]">
           ...and many more
         </h2>
       </motion.div>

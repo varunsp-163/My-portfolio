@@ -60,16 +60,8 @@ const skills: Skills = {
 			img: "https://cdn.svgporn.com/logos/npm-icon.svg",
 		},
 		{
-			name: "Yarn",
-			img: "https://cdn.svgporn.com/logos/yarn.svg",
-		},
-		{
 			name: "ViteJS",
 			img: "https://cdn.svgporn.com/logos/vitejs.svg",
-		},
-		{
-			name: "Django",
-			img: "https://cdn.svgporn.com/logos/django-icon.svg",
 		},
 		{
 			name: "Sockets",
@@ -102,10 +94,6 @@ const skills: Skills = {
 			img: "https://cdn.svgporn.com/logos/cloudflare-icon.svg",
 		},
 		{
-			name: "Snowflake",
-			img: "https://cdn.svgporn.com/logos/snowflake-icon.svg",
-		},
-		{
 			name: "Redis",
 			img: "https://cdn.svgporn.com/logos/redis.svg",
 		},
@@ -116,18 +104,26 @@ const skills: Skills = {
 			img: "https://cdn.svgporn.com/logos/c-plusplus.svg",
 		},
 		{
-			name: "Python",
-			img: "https://cdn.svgporn.com/logos/python.svg",
+			name: "Go Lang",
+			img: "https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Aqua.svg",
 		},
 		{
 			name: "Java",
 			img: "https://cdn.svgporn.com/logos/java.svg",
+		},
+		{
+			name: "Python",
+			img: "https://cdn.svgporn.com/logos/python.svg",
 		},
 	],
 	"Other Tools & Technologies": [
 		{
 			name: "Git",
 			img: "https://cdn.svgporn.com/logos/git-icon.svg",
+		},
+		{
+			name: "Postman",
+			img: "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
 		},
 		{
 			name: "Elasticsearch",
