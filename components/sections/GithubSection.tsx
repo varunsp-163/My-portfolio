@@ -58,6 +58,8 @@ const GithubSection = () => {
           }),
         ]);
 
+        console.error("Repo Res:", repoRes);
+        console.error("User Res:", userRes);
         if (!userRes.ok || !repoRes.ok) {
           throw new Error("Failed to fetch GitHub data");
         }
