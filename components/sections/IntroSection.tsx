@@ -9,10 +9,7 @@ import { PointerHighlight } from "../ui/pointer-highlight";
 
 const IntroSection = () => {
   return (
-    <div
-      className="w-full py-4 flex flex-col gap-40 overflow-x-hidden"
-      id="about"
-    >
+    <div className="w-full flex flex-col overflow-x-hidden" id="about">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -62,9 +59,12 @@ const IntroSection = () => {
           <AuroraText>Learner</AuroraText>
         </motion.h1>
       </motion.div>
-      <div className="flex w-full flex-col items-center justify-center">
+      <div className="flex w-full mt-30 flex-col items-center justify-center">
         <div className="sm:px-30 px-8 mb-10">
-          <Badge className="sm:text-4xl text-3xl font-bold tracking-wide">
+          <Badge
+            variant="secondary"
+            className="sm:text-4xl text-3xl font-bold tracking-wide bg-[#8D60E0] dark:text-white"
+          >
             I develop
           </Badge>
         </div>

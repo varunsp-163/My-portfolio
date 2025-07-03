@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import { BackgroundBeams } from "../ui/background-beams";
-
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { Download } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -28,7 +30,36 @@ const HeroSection = () => {
           </AuroraText>{" "}
           👋
         </motion.h1>
-
+        <motion.div
+          className="flex gap-4 mt-16 z-30" // Ensure buttons have a higher z-index
+          initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
+          animate={{ opacity: 1, y: 0, filter: "none" }}
+          transition={{
+            delay: 1,
+            duration: 0.8,
+            type: "spring",
+          }}
+        >
+          <Link href="mailto:spvarun47@gmail.com">
+            <Button size="lg" className="!z-30 cursor-pointer">
+              Get In Touch
+            </Button>
+          </Link>
+          <Link href="/resume.pdf" download="[Resume] Varun S P.pdf">
+            <Button
+              size="lg"
+              variant="outline"
+              className="!z-30 cursor-pointer"
+            >
+              Download Resume
+              <Download className="size-5" />
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
+      <div className="absolute inset-0 z-20">
+        {" "}
+        {/* Ensure BackgroundBeams has a lower z-index */}
         <BackgroundBeams />
       </div>
     </div>

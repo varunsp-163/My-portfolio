@@ -1,21 +1,23 @@
 import ResumeDock from "@/components/dock";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import GithubSection from "@/components/sections/GithubSection";
 import HeroSection from "@/components/sections/HeroSection";
 import IntroSection from "@/components/sections/IntroSection";
+import LeetcodeSection from "@/components/sections/LeetcodeSection";
+// import SkillSection from "@/components/sections/SkillSection";
 import ThankSection from "@/components/sections/ThanksSection";
-import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
+      <Analytics />
       <HeroSection />
       <IntroSection />
-
+      {/* <SkillSection /> */}
       <ExperienceSection />
       <GithubSection />
-
+      {/* <LeetcodeSection /> */}
       <ThankSection />
       <ResumeDock />
     </div>
