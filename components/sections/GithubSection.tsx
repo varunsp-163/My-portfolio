@@ -113,18 +113,18 @@ const GithubSection = () => {
 
         <TypewriterEffectSmooth words={words} />
 
-        <p className="text-2xl font-bold tracking-tighter text-black dark:text-white flex">
+        <p className="text-xl sm:text-2xl font-bold tracking-tighter text-black dark:text-white flex">
           <NumberTicker
             value={user.public_repos}
             className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white mr-1"
-          />{" "}
+          />
           Repositories
         </p>
-        <p className="text-2xl font-bold tracking-tighter text-black dark:text-white">
+        <p className="text-xl sm:text-2xl font-bold tracking-tighter text-black dark:text-white flex">
           <NumberTicker
             value={user.followers}
             className="whitespace-pre-wrap font-medium tracking-tighter text-black dark:text-white mr-1"
-          />{" "}
+          />
           Followers
         </p>
       </div>

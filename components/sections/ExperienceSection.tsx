@@ -140,7 +140,7 @@ const ExperienceSection = () => {
     {
       title: "Certifications",
       content: (
-        <div className="gap-2 grid grid-rows-1 sm:grid-rows-2 md:grid-rows-3 lg:grid-rows-4">
+        <div className="gap-6 grid grid-rows-1 sm:grid-rows-2 md:grid-rows-3 lg:grid-rows-4">
           <LinkPreview
             url="https://drive.google.com/file/d/19MZervagvV-5lXHVVBztGB6YuNdEGX9V/view?usp=sharing"
             className="font-bold"

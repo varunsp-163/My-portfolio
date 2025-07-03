@@ -10,29 +10,19 @@ import { Meteors } from "../ui/meteors";
 
 const RepoCard = ({ repo }: { repo: any }) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  console.log("Current theme:", theme);
 
   return (
-    <div
-      className={`border p-4 rounded-xl w-full max-w-md shadow-md transition hover:shadow-lg ${
-        isDark
-          ? "bg-[#0d1117] border-[#30363d] text-white"
-          : "bg-white border-gray-300 text-gray-800"
-      }`}
-    >
+    <div className="border p-4 rounded-xl w-full max-w-md shadow-md transition hover:shadow-lg dark:bg-[#0d1117] dark:border-[#30363d] dark:text-white bg-white border-gray-300 text-gray-800">
       <div className="mb-4">
         <h3 className="text-xl font-bold mb-1">{repo.name}</h3>
-        <p className={`text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+        <p className="text-sm dark:text-gray-400 text-gray-600">
           {repo.description}
         </p>
       </div>
 
       <div className="flex justify-between items-center">
-        <div
-          className={`flex space-x-4 text-sm ${
-            isDark ? "text-gray-300" : "text-gray-700"
-          }`}
-        >
+        <div className="flex space-x-4 text-sm dark:text-gray-300 text-gray-700">
           <div className="flex items-center gap-1">
             <WatchIcon className="h-4 w-4" />
             {repo.watchers}
@@ -52,9 +42,7 @@ const RepoCard = ({ repo }: { repo: any }) => {
             href={repo.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`hover:opacity-80 ${
-              isDark ? "text-white" : "text-black"
-            }`}
+            className="hover:opacity-80 dark:text-white text-black"
           >
             <GithubIcon className="w-5 h-5" />
           </a>
@@ -63,9 +51,7 @@ const RepoCard = ({ repo }: { repo: any }) => {
               href={repo.homepage}
               target="_blank"
               rel="noopener noreferrer"
-              className={`hover:opacity-80 ${
-                isDark ? "text-white" : "text-black"
-              }`}
+              className="hover:opacity-80 dark:text-white text-black"
             >
               <LinkIcon className="w-5 h-5" />
             </a>
