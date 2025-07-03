@@ -142,7 +142,7 @@ function ResumeDock() {
                     }),
                     "size-12 rounded-full"
                   )}
-                  download="[Resume] Varun S P.pdf"
+                  download="[Resume] Varun_S_P.pdf"
                 >
                   <File className="size-5" />
                 </Link>

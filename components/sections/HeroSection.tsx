@@ -45,7 +45,7 @@ const HeroSection = () => {
               Get In Touch
             </Button>
           </Link>
-          <Link href="/resume.pdf" download="[Resume] Varun S P.pdf">
+          <Link href="/resume.pdf" download="[Resume] Varun_S_P.pdf">
             <Button
               size="lg"
               variant="outline"
