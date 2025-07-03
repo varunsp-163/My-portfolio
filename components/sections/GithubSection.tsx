@@ -129,8 +129,8 @@ const GithubSection = () => {
         </p>
       </div>
 
-      <div className="mb-4 flex flex-col items-center justify-center">
-        <div className="relative w-full min-w-[320px]">
+      <div className="mb-4 flex flex-col items-center justify-center relative w-full max-w-screen-md">
+        <div className="w-full">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
             theme={theme}
@@ -138,8 +138,8 @@ const GithubSection = () => {
             hideMonthLabels
             colorScheme={resolvedTheme}
           />
-          <BorderBeam duration={8} size={100} />
         </div>
+        <BorderBeam duration={8} size={100} />
       </div>
 
       <div className="flex flex-wrap gap-4 justify-center w-full">
