@@ -21,8 +21,8 @@ const GithubSection = () => {
   const [user, setUser] = useState<any>(null);
   const [repos, setRepos] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const { theme: pageTheme } = useTheme();
-
+  const pageTheme = useTheme();
+  console.log("Current theme:", pageTheme);
   // Correct theme structure for react-github-calendar
   const theme = {
     dark: [
@@ -111,7 +111,11 @@ const GithubSection = () => {
   ];
 
   const resolvedTheme =
-    pageTheme === "dark" || pageTheme === "light" ? pageTheme : "dark";
+    pageTheme.theme === "system"
+      ? pageTheme.systemTheme
+      : pageTheme.theme === "dark"
+      ? "dark"
+      : "light";
 
   return (
     <div className="p-4 flex flex-col items-center justify-center my-6 w-[100%]">
