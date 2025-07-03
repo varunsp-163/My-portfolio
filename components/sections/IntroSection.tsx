@@ -1,21 +1,82 @@
+"use client";
+
 import React from "react";
-import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { AuroraText } from "../magicui/aurora-text";
+import { Badge } from "../ui/badge";
+import { VelocityScroll } from "../magicui/scroll-based-velocity";
+import { PointerHighlight } from "../ui/pointer-highlight";
+
 const IntroSection = () => {
   return (
-    <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
-      <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
-        )}
-      />
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-      <p className="relative z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl">
-        Backgrounds
-      </p>
+    <div
+      className="w-full py-4 flex flex-col gap-40 overflow-x-hidden"
+      id="about"
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="sm:px-30 px-8"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="sm:text-4xl text-3xl font-bold tracking-wide"
+        >
+          I am a
+        </motion.h2>
+        <motion.h1
+          initial={{ opacity: 0, x: -50, filter: "blur(5px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="md:text-7xl sm:text-5xl text-4xl font-bold"
+        >
+          <PointerHighlight>
+            {" "}
+            <AuroraText>
+              Master&apos;s student at Macquarie University
+            </AuroraText>
+          </PointerHighlight>
+        </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, x: 50, filter: "blur(5px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="md:text-7xl sm:text-5xl text-4xl font-bold"
+        >
+          <AuroraText speed={2}>Passionate full-stack developer</AuroraText>
+        </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, x: -50, filter: "blur(5px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="md:text-7xl sm:text-5xl text-4xl font-bold"
+        >
+          <AuroraText>Learner</AuroraText>
+        </motion.h1>
+      </motion.div>
+      <div className="flex w-full flex-col items-center justify-center">
+        <div className="sm:px-30 px-8 mb-10">
+          <Badge className="sm:text-4xl text-3xl font-bold tracking-wide">
+            I develop
+          </Badge>
+        </div>
+        <div className="relative w-full overflow-hidden">
+          <VelocityScroll defaultVelocity={2}>
+            Frontend • Backend • Distributed Systems • SaaS Platforms • Scalable
+            Systems •
+          </VelocityScroll>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,8 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 import { Metadata } from "next";
-
-
-
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Varun S P | Software Engineer",
@@ -53,6 +50,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+
           {children}
         </ThemeProvider>
       </body>
