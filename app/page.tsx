@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <Analytics />
       <HeroSection />
       <IntroSection />

@@ -1,17 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import dynamic from "next/dynamic";
 import {
   Card,
   CardHeader,
@@ -25,7 +15,17 @@ import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 ChartJS.register(
   CategoryScale,
@@ -35,6 +35,15 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend
+);
+
+// Dynamically import LineChart only (you don't need to import Chart.js again)
+const LineChart = dynamic(
+  () => import("react-chartjs-2").then((mod) => mod.Line),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="h-[300px] w-full" />,
+  }
 );
 
 interface Badge {
@@ -70,7 +79,8 @@ const LeetcodeSection = () => {
   const url =
     process.env.NEXT_PUBLIC_LEETCODE_API_URL ||
     "https://alfa-leetcode-api.onrender.com";
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails>({
     avatar: "",
     birthday: "",
@@ -93,6 +103,12 @@ const LeetcodeSection = () => {
   });
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const fetchData = async () => {
       try {
         const [profileRes, badgesRes, contestRes] = await Promise.all([
@@ -121,7 +137,7 @@ const LeetcodeSection = () => {
     };
 
     fetchData();
-  }, [url]);
+  }, [url, mounted]);
 
   const contestTitles = contestDetails.contestParticipation.map(
     (contest) => contest.contest.title
@@ -130,60 +146,93 @@ const LeetcodeSection = () => {
     (contest) => contest.rating
   );
 
-  const chartData = {
-    labels: contestTitles,
-    datasets: [
-      {
-        label: "Contest Ratings",
-        data: contestRatings,
-        borderColor: theme === "dark" ? "#3b82f6" : "#2563eb",
-        backgroundColor:
-          theme === "dark"
-            ? "rgba(59, 130, 246, 0.2)"
-            : "rgba(37, 99, 235, 0.2)",
-        fill: true,
-        tension: 0.4,
-      },
-    ],
-  };
+  const chartData = mounted
+    ? {
+        labels: contestTitles,
+        datasets: [
+          {
+            label: "Contest Ratings",
+            data: contestRatings,
+            borderColor: resolvedTheme === "dark" ? "#3b82f6" : "#2563eb",
+            backgroundColor:
+              resolvedTheme === "dark"
+                ? "rgba(59, 130, 246, 0.2)"
+                : "rgba(37, 99, 235, 0.2)",
+            fill: true,
+            tension: 0.4,
+          },
+        ],
+      }
+    : { labels: [], datasets: [] };
 
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top" as const,
-        labels: {
-          color: theme === "dark" ? "#e5e7eb" : "#374151",
+  const chartOptions = mounted
+    ? {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: "top" as const,
+            labels: {
+              color: resolvedTheme === "dark" ? "#e5e7eb" : "#374151",
+            },
+          },
         },
-      },
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: theme === "dark" ? "#9ca3af" : "#6b7280",
+        scales: {
+          x: {
+            type: "category" as const, // ✅ Fix: force literal type
+            ticks: {
+              color: resolvedTheme === "dark" ? "#9ca3af" : "#6b7280",
+            },
+            grid: {
+              color:
+                resolvedTheme === "dark"
+                  ? "rgba(255, 255, 255, 0.1)"
+                  : "rgba(0, 0, 0, 0.1)",
+            },
+          },
+          y: {
+            type: "linear" as const, // ✅ Fix: force literal type
+            ticks: {
+              color: resolvedTheme === "dark" ? "#9ca3af" : "#6b7280",
+            },
+            grid: {
+              color:
+                resolvedTheme === "dark"
+                  ? "rgba(255, 255, 255, 0.1)"
+                  : "rgba(0, 0, 0, 0.1)",
+            },
+          },
         },
-        grid: {
-          color:
-            theme === "dark"
-              ? "rgba(255, 255, 255, 0.1)"
-              : "rgba(0, 0, 0, 0.1)",
-        },
-      },
-      y: {
-        ticks: {
-          color: theme === "dark" ? "#9ca3af" : "#6b7280",
-        },
-        grid: {
-          color:
-            theme === "dark"
-              ? "rgba(255, 255, 255, 0.1)"
-              : "rgba(0, 0, 0, 0.1)",
-        },
-      },
-    },
-  };
+      }
+    : {};
 
   const isLoading = loading.profile || loading.contest || loading.badges;
+
+  if (!mounted) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-full max-w-6xl">
+          <Card className="mb-8 w-full">
+            <CardHeader>
+              <CardTitle className="text-center text-3xl">
+                LeetCode Profile
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center space-x-4 justify-center">
+                <Skeleton className="h-20 w-20 rounded-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[200px]" />
+                  <Skeleton className="h-4 w-[150px]" />
+                  <Skeleton className="h-4 w-[100px]" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-8 px-4">
@@ -199,7 +248,6 @@ const LeetcodeSection = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {/* Existing profile content */}
             {isLoading ? (
               <div className="flex items-center space-x-4 justify-center">
                 <Skeleton className="h-20 w-20 rounded-full" />
@@ -307,8 +355,8 @@ const LeetcodeSection = () => {
               {loading.contest ? (
                 <Skeleton className="h-[300px] w-full" />
               ) : contestDetails.contestParticipation.length > 0 ? (
-                <div className="h-[300px]">
-                  <Line data={chartData} options={chartOptions} />
+                <div className="h-[300px] sm:h-[350px] md:h-[400px] w-full mb-4">
+                  <LineChart data={chartData} options={chartOptions} />
                 </div>
               ) : (
                 <div className="h-[300px] flex items-center justify-center text-muted-foreground">

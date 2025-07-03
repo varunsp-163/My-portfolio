@@ -140,7 +140,7 @@ const GithubSection = () => {
         </p>
       </div>
 
-      <div className="mb-4 relative max-w-[90vw]">
+      <div className="mb-4 relative max-w-[86vw]">
         <div className="w-full">
           <GitHubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME || ""}
