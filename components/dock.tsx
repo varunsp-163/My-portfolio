@@ -132,7 +132,7 @@ function ResumeDock() {
           <DockIcon key="download-resume">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Link
+                <a
                   href="/resume.pdf"
                   aria-label="download-resume"
                   className={cn(
@@ -145,8 +145,9 @@ function ResumeDock() {
                   download="[Resume] Varun_S_P.pdf"
                 >
                   <File className="size-5" />
-                </Link>
+                </a>
               </TooltipTrigger>
+
               <TooltipContent>
                 <p>Download Resume</p>
               </TooltipContent>

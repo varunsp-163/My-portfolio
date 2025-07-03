@@ -45,16 +45,16 @@ const HeroSection = () => {
               Get In Touch
             </Button>
           </Link>
-          <Link href="/resume.pdf" download="[Resume] Varun_S_P.pdf">
+          <a href="/resume.pdf" download="[Resume] Varun_S_P.pdf">
             <Button
               size="lg"
               variant="outline"
               className="!z-30 cursor-pointer"
             >
               Download Resume
-              <Download className="size-5" />
+              <Download className="size-5 ml-2" />
             </Button>
-          </Link>
+          </a>
         </motion.div>
       </div>
       <div className="absolute inset-0 z-20">
