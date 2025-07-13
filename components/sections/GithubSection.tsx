@@ -159,11 +159,11 @@ const GithubSection = () => {
         <BorderBeam duration={8} size={100} />
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center w-full">
+      {/* <div className="flex flex-wrap gap-4 justify-center w-full">
         {repos.map((repo) => (
           <RepoCard key={repo.id} repo={repo} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

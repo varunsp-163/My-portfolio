@@ -78,12 +78,7 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <img
-            src={src}
-            width={width}
-            height={height}
-            alt="hidden image"
-          />
+          <img src={src} width={width} height={height} alt="hidden image" />
         </div>
       ) : null}
 
@@ -96,6 +91,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
+          target="_blank"
           className={cn("text-black dark:text-white", className)}
           href={url}
         >
