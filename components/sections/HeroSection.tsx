@@ -45,7 +45,13 @@ const HeroSection = () => {
               Get In Touch
             </Button>
           </Link>
-          <a href="/resume.pdf" download="[Resume] Varun_S_P.pdf">
+          <a
+            // href="/resume.pdf"
+            href="https://drive.google.com/file/d/14oLzwEfAsT_gsyckty_PuqjzV5v8Dwmy/view?usp=sharing"
+            download="[Resume] Varun_S_P.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               size="lg"
               variant="outline"

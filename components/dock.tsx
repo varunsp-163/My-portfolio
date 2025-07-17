@@ -133,7 +133,10 @@ function ResumeDock() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/14oLzwEfAsT_gsyckty_PuqjzV5v8Dwmy/view?usp=sharing"
+                  // href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="download-resume"
                   className={cn(
                     buttonVariants({
