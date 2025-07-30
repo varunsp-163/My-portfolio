@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Download } from "lucide-react";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -60,6 +61,20 @@ const HeroSection = () => {
               Download Resume
               <Download className="size-5 ml-2" />
             </Button>
+          </a>
+        </motion.div>
+        <motion.div className="flex justify-center my-4">
+          <a
+            href="https://coff.ee/spvarun47g"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              width={160}
+              height={40}
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me A Coffee"
+            />
           </a>
         </motion.div>
       </div>
