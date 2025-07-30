@@ -63,7 +63,7 @@ const HeroSection = () => {
             </Button>
           </a>
         </motion.div>
-        <motion.div className="flex justify-center my-4">
+        <div className="flex gap-4 mt-6 z-30">
           <a
             href="https://coff.ee/spvarun47g"
             target="_blank"
@@ -76,7 +76,7 @@ const HeroSection = () => {
               alt="Buy Me A Coffee"
             />
           </a>
-        </motion.div>
+        </div>
       </div>
       <div className="absolute inset-0 z-20">
         {" "}
