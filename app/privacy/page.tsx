@@ -42,14 +42,6 @@ const PrivacyPolicy = () => {
             <code className="bg-gray-100 px-1 rounded">scripting</code>: To
             inject scripts for extracting data.
           </li>
-          <li>
-            <code className="bg-gray-100 px-1 rounded">webRequest</code>: To
-            intercept timetable API responses.
-          </li>
-          <li>
-            <code className="bg-gray-100 px-1 rounded">downloads</code>: To
-            allow users to download .ics files.
-          </li>
         </ul>
       </section>
 
@@ -92,7 +84,7 @@ const PrivacyPolicy = () => {
             href="mailto:spvarun47g@gmail.com"
             className="text-blue-500 underline"
           >
-            spvarun47g@gmail.com
+            spvarun47@gmail.com
           </a>
         </p>
       </section>

@@ -8,6 +8,7 @@ import SkillSection from "@/components/sections/SkillSection";
 import ThankSection from "@/components/sections/ThanksSection";
 import { Analytics } from "@vercel/analytics/react";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import Project from "@/components/sections/Project";
 export default function Home() {
   return (
     <div className="relative">
@@ -18,6 +19,7 @@ export default function Home() {
       <SkillSection />
       <ExperienceSection />
       <GithubSection />
+      <Project/>
       <LeetcodeSection />
       <ThankSection />
       <ResumeDock />
