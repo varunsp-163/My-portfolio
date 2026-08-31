@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <>
       <div className="max-w-7xl py-20 px-4 md:px-8 lg:px-10">
         <TextReveal className="text-center">
-          Here&apos;s a timeline of my education, part-time/internship work experience, and
+          Here&apos;s a timeline of my education, internship work experience, and
           certifications.
         </TextReveal>
       </div>
