@@ -1,6 +1,6 @@
 "use client";
 
-import { File, HomeIcon, InfoIcon, MailIcon, Moon, Sun } from "lucide-react";
+import { BookOpen, File, HomeIcon, InfoIcon, MailIcon, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -51,6 +51,11 @@ const DATA = {
         url: "https://github.com/varunsp-163",
         icon: Icons.github,
       },
+      Research: {
+        name: "Research Paper",
+        url: "https://doi.org/10.1038/s41598-026-50656-2",
+        icon: BookOpen,
+      },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/varun-s-p/",
@@ -89,7 +94,7 @@ function ResumeDock() {
                         variant: "ghost",
                         size: "icon",
                       }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full",
                     )}
                   >
                     <item.icon className="size-5" />
@@ -116,14 +121,15 @@ function ResumeDock() {
                         variant: "ghost",
                         size: "icon",
                       }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full",
                     )}
                   >
                     <social.icon className="size-5" />
                   </Link>
                 </TooltipTrigger>
+
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p>{social.name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -143,7 +149,7 @@ function ResumeDock() {
                       variant: "ghost",
                       size: "icon",
                     }),
-                    "size-12 rounded-full"
+                    "size-12 rounded-full",
                   )}
                   download="[Resume] Varun_S_P.pdf"
                 >
