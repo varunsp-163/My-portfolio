@@ -46,11 +46,11 @@ const DATA = {
   ],
   contact: {
     social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://github.com/varunsp-163",
-        icon: Icons.github,
-      },
+      // GitHub: {
+      //   name: "GitHub",
+      //   url: "https://github.com/varunsp-163",
+      //   icon: Icons.github,
+      // },
       Research: {
         name: "Research Paper",
         url: "https://doi.org/10.1038/s41598-026-50656-2",
